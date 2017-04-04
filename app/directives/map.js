@@ -8,6 +8,6 @@ app.directive('googleMap', function(){
     link: function(){
       console.log('map directive');
     },
-    templateUrl: "directiveTpl/map.tpl.html"
+    templateUrl: "directives/directiveTpl/map.tpl.html"
   }
 });

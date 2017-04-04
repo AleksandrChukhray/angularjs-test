@@ -46,3 +46,16 @@
 .to-top .fa{
   color: #2b669a;
 }
+
+.form{
+  width: 100%;
+}
+
+.form .input-group{
+  width: 100%;
+  margin: 0 0 10px;
+}
+
+input, textarea{
+  width: 100%;
+}

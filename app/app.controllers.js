@@ -6,9 +6,23 @@
 var app = angular.module('myapp');
 
 app.controller('rootCtrl', function ($scope) {
+
+  $scope.config = {
+    companyName: 'My company',
+    contacts: {
+      address: '3481 Melrose Place Beverly Hills, CA 90210',
+      phone: '(123) 456-7890',
+      email: 'name@example.com',
+      fb: 'https://www.facebook.com/',
+      twitter: 'https://twitter.com/',
+      dribbble: 'https://dribbble.com/'
+    }
+  };
+
   $scope.isActive = function () {
     
   }
+
 });
 
 app.controller('MainCtrl', function($scope){
