@@ -1,18 +1,26 @@
 'use strict';
 
-angular.
-  module('myapp').
-  config(['$locationProvider' ,'$routeProvider',
-    function config($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
+var app = angular.module('myapp');
 
+  app.config(['$locationProvider' ,'$routeProvider',
+  function config($locationProvider, $routeProvider) {
+
+    $locationProvider.hashPrefix('!');
       $routeProvider.
-        when('/phones', {
-          template: '<phone-list></phone-list>'
+        when('/', {
+          templateUrl: 'views/home.html',
+          controller: 'MainCtrl'
         }).
-        when('/phones/:phoneId', {
-          template: '<phone-detail></phone-detail>'
+        when('/map', {
+          templateUrl: 'views/map.html',
+          controller: 'MapCtrl'
         }).
-        otherwise('/phones');
-    }
-  ]);
+        when('/contacts', {
+          templateUrl: 'views/contacts.html',
+          controller: 'ContactsCtrl'
+        }).
+        otherwise({
+          templateUrl: 'views/404.html',
+          controller: 'NotFoundCtrl'
+        });
+    }]);
