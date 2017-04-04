@@ -15,7 +15,8 @@
     "angular-animate": "^1.6.4",
     "jquery": "^3.2.1",
     "angular-bootstrap": "^2.5.0",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "malihu-custom-scrollbar-plugin": "^3.1.5"
   },
   "devDependencies": {
     "angular-bootstrap": "^2.5.0"

@@ -7,7 +7,7 @@ var app = angular.module('myapp');
 app.directive('contactsList', function(){
   return {
     link: function(){
-      console.log('contactsList directive');
+      //console.log('contactsList directive');
     },
     templateUrl: "directives/directiveTpl/contacts.tpl.html"
   }

@@ -2,11 +2,582 @@
   <h1 class="h1 text-center">Map Page</h1>
   <div class="container">
     <div class="row">
-      <div class="col-sm-3">
+      <div class="map">
+        <div class="col-sm-3">
+          <form action="" class="form">
+            <div class="form-group">
+              <input type="text" placeholder="Search" class="form-control" ng-keyup="reBuild()" ng-model="searchQuery">
+            </div>
+            <div class="form-group">
+              <select name="" class="form-control">
+                <option value="">Alphabet</option>
+                <option value="">Position</option>
+              </select>
+              <div class="map-plan" id="plan_list">
+                <div class="plan_list_item" ng-repeat="item in arrayPlaces | filter : searchQuery" repeat-end="onEnd()" data-href="{{item.id}}">{{item.items}}</div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-9">
+          <div class="svg_map_wrap">
+            <div class="tooltip_plan" id="tooltip_plan"></div>
+            <div class="svg_wrap" style="width: 100%; height: 100%;" data-color="#fce5b8" data-width="969.90002" data-height="609.59998">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 969.90002 609.59998" style="width: 100%; height: 440pxpx;">
+                <image x="0" y="0" width="969.90002" height="609.59998" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/img/plan_2.jpg" class="imageSvg" style="opacity: 0.7;"></image>
+                <g class="am-markers">
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/189.htm" id="num_146">
+                    <path d="m 73.455506,412.48092 0.04036,-21.39089 17.435593,0.12108 -0.08072,21.18908 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#" id="num_1461">
+                    <path d="m 92.101903,412.44055 -0.04036,-21.39088 11.825527,0.2018 -0.16144,21.18908 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/205.htm" id="num_148">
+                    <path d="m 105.05752,412.44055 -0.0404,-21.31016 49.80444,0.0404 -0.0404,21.31017 z" class="stroke" style=""></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/206.htm" id="num_151">
+                    <path d="m 156.31493,412.48092 0,-21.39089 13.80318,0.12108 -0.0404,21.31017 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/166.htm" id="num_152">
+                    <path d="m 171.66178,412.42438 -0.0285,-21.26152 16.40989,0.0285 0.0285,14.29802 -7.84821,7.02058 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/162.htm" id="num_101">
+                    <path d="m 73.586676,389.93976 -0.03027,-291.904914 -0.655852,0.01009 0.06054,-16.224788 161.957256,0.07326 -0.0285,16.16018 -0.29966,-0.01427 -0.0285,292.010512 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/169.htm" id="num_102">
+                    <path d="m 245.22838,96.097558 0,-14.287499 17.8392,0.04036 0,14.247139 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/170.htm" id="num_1021">
+                    <path d="m 236.10698,109.45677 0,-27.36419 7.99132,0.08072 -0.0807,15.094703 19.6554,0.08072 0,12.067687 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/171.htm" id="num_103">
+                    <path d="m 236.14734,124.14787 -0.12108,-12.63273 27.7678,0.12108 -0.12108,12.51165 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/4173.htm" id="num_104">
+                    <path d="m 236.14734,138.07213 0,-12.47129 27.52564,0.0807 -0.0404,12.35021 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6459.htm" id="num_105">
+                    <path d="m 250.83844,152.52107 0,-12.67309 12.4713,0.0807 0.0807,12.51165 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/178.htm" id="num_106">
+                    <path d="m 236.10698,161.96535 0.0404,-22.23845 13.43994,0.0807 0.0404,13.96462 14.04534,0.0404 0,8.07203 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1694.htm" id="num_1106">
+                    <path d="m 236.1877,185.13209 -0.12108,-21.99629 27.60636,0.0404 0.0404,9.60572 -12.95562,0 0.0404,12.51165 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/174.htm" id="num_107">
+                    <path d="m 251.76673,185.05137 0,-11.17977 11.94661,0.0404 -0.0404,11.22013 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/179.htm" id="num_108">
+                    <path d="m 236.10698,200.06535 0,-13.84354 27.52564,0.0404 0.0404,13.84354 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/180.htm" id="num_1091">
+                    <path d="m 236.10698,215.96726 0,-13.56102 27.52564,0.0404 0.0404,3.9553 -13.52066,20.98728 -1.4126,0 0,-11.42192 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1031.htm" id="num_109">
+                    <path d="m 236.06662,227.34882 0.0807,-10.45328 11.66409,0.0807 -0.0807,10.37256 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/185.htm" id="num_115">
+                    <path d="m 297.71831,226.8356 -15.41103,-20.1485 0.0571,-3.65298 28.93849,0.11415 -0.0571,23.68733 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/184.htm" id="num_116">
+                    <path d="m 312.44441,227.00683 -0.0571,-24.08687 27.34031,0.22831 0.0571,23.68733 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/183.htm" id="num_114">
+                    <path d="m 282.59267,201.72132 0.0571,-15.46811 56.96374,0.17124 -0.0571,15.52519 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/176.htm" id="num_113">
+                    <path d="m 282.30728,184.71211 0,-36.07323 57.42036,0.17123 0,36.01616 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2735.htm" id="num_111">
+                    <path d="m 282.28125,134.41248 0,-10.875 57.625,0.0625 -0.0625,10.78125 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6670.htm" id="num_112">
+                    <path d="m 282.30728,147.5544 0.0111,-10.99251 57.52347,0.006 0,10.98698 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/181.htm" id="num_110">
+                    <path d="m 282.13604,121.9835 0.22832,-39.269591 57.13497,-0.114156 0.0571,39.554987 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/168.htm" id="num_117">
+                    <path d="m 341.12414,227.46991 0.0807,-144.973728 79.02521,0 0,145.135168 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/OSTIN.htm" id="num_201">
+                    <path d="m 421.52159,123.01779 -0.24216,-40.521608 64.49555,0.08072 0.56504,6.619068 0.16144,5.327542 0.0807,8.959958 -0.16145,11.22013 -0.4036,8.31419 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/oodji.htm" id="num_203">
+                    <path d="m 421.52159,161.60211 0.0807,-37.37351 64.57627,0.16144 -0.48432,7.02267 -0.48432,5.1661 -0.4036,3.63241 -0.32288,2.50233 -37.45424,-0.16144 -0.16144,18.6464 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/233.htm" id="num_204">
+                    <path d="m 448.24003,160.79491 0.0807,-17.19343 35.92055,0.0807 -0.64577,5.65042 -0.68612,4.7625 -0.56504,4.23782 -0.6054,2.58305 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/234.htm" id="num_205">
+                    <path d="m 421.52159,227.38918 -0.0807,-64.65698 25.91123,0.16144 0,56.58495 17.35487,0.16144 -1.77584,4.19746 -1.77585,3.55169 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/5042.htm" id="num_2041">
+                    <path d="m 448.51811,177.60591 0,-14.81171 33.61889,-0.0571 -1.45549,7.33451 -25.4282,0.11416 -0.0285,7.36304 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/3859.htm" id="num_2042">
+                    <path d="m 456.30925,177.29198 0,-6.27856 23.97271,0.0571 -1.3984,6.19295 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6303.htm" id="num_2043">
+                    <path d="m 448.56291,199.29851 0.0404,-20.82585 30.14904,0.0404 -1.009,4.11674 -1.21081,3.83421 -1.57404,5.28719 -1.49333,4.72214 -1.04936,2.86557 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/5189.htm" id="num_2044">
+                    <path d="m 448.52255,218.42923 0.0404,-18.36388 23.69142,0.0404 -0.52469,2.05837 -1.45296,3.67277 -2.05837,5.36791 -2.94629,7.34555 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1211.htm" id="num_362">
+                    <path d="m 543.95236,226.77852 -2.96805,-5.76487 -1.94065,-4.59477 -1.91211,-4.99431 19.34941,0 0.0571,15.43957 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1215.htm" id="num_361">
+                    <path d="m 536.56077,209.912 -1.88357,-4.99431 -1.6838,-4.70893 -1.6838,-5.16555 24.85743,0 0.14269,14.89733 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/253.htm" id="num_233">
+                    <path d="m 531.33814,193.73042 -1.74087,-5.45094 -1.14156,-3.8813 -0.74201,-2.88243 28.68164,-0.0285 0.11416,12.27175 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/240.htm" id="num_211">
+                    <path d="m 527.25707,180.17442 -1.56964,-6.0788 -1.34133,-6.25003 -0.85617,-4.62331 32.70564,0 0,17.09483 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/239.htm" id="num_210">
+                    <path d="m 523.54701,162.50881 -1.28425,-6.39273 -0.85617,-5.47947 -0.37101,-2.1975 -0.0856,-1.65526 35.1029,0.0856 0.0285,15.55373 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/238.htm" id="num_209">
+                    <path d="m 520.69312,145.27128 -0.62786,-4.9087 -0.59932,-5.62217 -0.45662,-4.62331 24.37226,0.0856 0.0285,-5.47948 12.5286,0.0285 0.22831,20.40535 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/AntoniZeeman.htm" id="num_208">
+                    <path d="m 518.98078,129.14678 -0.31393,-4.68039 -0.28539,-4.59477 -0.14269,-3.2249 23.57317,0.0856 0,12.58567 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Cropptown.htm" id="num_207">
+                    <path d="m 518.09607,115.5337 0,-9.73178 0,-13.584542 0.57078,-9.76032 37.07209,0.05708 0.0571,40.782152 -12.64275,-0.0285 0,-7.67697 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/House.htm" id="num_236">
+                    <path d="m 557.76521,226.55021 0,-49.3153 28.88141,0.17123 -0.0571,48.8016 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/241.htm" id="num_213">
+                    <path d="m 588.24481,226.43605 -0.11416,-50.17147 -30.70791,0.0571 -0.62786,-93.664829 79.22413,0 0,143.836299 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/261.htm" id="num_239">
+                    <path d="m 642.37243,226.4609 -0.0404,-24.33718 17.8392,0.2018 0,24.2161 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/262.htm" id="num_240">
+                    <path d="m 661.01883,226.54162 0,-24.90222 -18.72712,-0.0404 0.0404,-16.42659 49.68337,0.0404 0.0404,41.28845 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/275.htm" id="num_307">
+                    <path d="m 693.26814,226.43605 -0.0571,-33.30495 6.30711,0.0856 -0.0571,13.69869 22.68846,0.0571 0.11416,11.27288 -8.76146,8.16214 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6306.htm" id="num_379">
+                    <path d="m 700.45995,205.91655 0.0285,-12.81399 21.60398,0.0856 0.0285,12.61421 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Vigoss.htm" id="num_306">
+                    <path d="m 693.38229,192.13224 -0.0285,-17.89392 29.02411,0.0571 -0.0571,17.80831 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/347.htm" id="num_305">
+                    <path d="m 693.29668,173.15384 -0.0856,-18.20785 29.05265,0.0285 -0.0856,18.09369 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/242.htm" id="num_301">
+                    <path d="m 642.35465,184.42672 0.0581,-101.849818 54.20371,0.12108 0.16144,25.023308 25.62871,-0.0807 0.0202,46.27293 -30.55265,-0.0202 -0.0202,30.51229 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6564.htm" id="num_302">
+                    <path d="m 698.03414,106.17292 -0.0285,-23.430473 24.25811,0.114156 -0.0571,12.528599 -17.20899,-0.02854 0,10.759188 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6146.htm" id="num_3021">
+                    <path d="m 706.42459,106.20146 -0.0285,-9.931551 15.52519,0.05708 -0.0285,9.817401 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/243.htm" id="num_317">
+                    <path d="m 825.36544,227.71207 -0.16145,-43.75043 -55.29343,-0.4036 0,-81.52754 155.62881,0.16144 -0.0807,125.35869 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#" id="num_316">
+                    <path d="m 806.16822,227.63469 0,-42.58011 17.69414,0.11415 -0.17123,42.58011 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/284.htm" id="num_376">
+                    <path d="m 787.90329,227.63469 -0.0571,-42.29472 17.2946,0.0571 0,42.23764 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/283.htm" id="num_315">
+                    <path d="m 769.98083,227.74884 -0.11416,-42.29472 17.29461,0.0571 0,42.29472 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/5822.htm" id="num_314">
+                    <path d="m 750.74558,227.69177 -7.70552,-9.8174 0.11416,-10.3311 25.5709,0.22831 -0.0571,19.92019 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Belle_Avenue.htm" id="num_313">
+                    <path d="m 743.2113,206.05924 0,-21.29005 25.51382,-0.0571 -0.0571,21.34713 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/280.htm" id="num_312">
+                    <path d="m 743.09714,183.57055 -0.0285,-19.54918 25.62798,0.0571 0,19.43502 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2159.htm" id="num_311">
+                    <path d="m 743.12568,162.87981 0.0856,-18.20784 25.51382,0.0856 0.0571,18.06516 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/bud_zdorovij.htm" id="num_309">
+                    <path d="m 743.41107,129.00408 -0.11416,-13.556 25.54236,0 0.0285,13.556 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/274.htm" id="num_308">
+                    <path d="m 743.15422,114.64899 0,-32.562938 61.47289,0.05708 -0.0285,18.892778 -35.95907,0.0285 0.0285,13.52746 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#" id="num_304">
+                    <path d="m 805.62931,101.30402 -0.0404,-19.17108 119.8697,0.12108 0,19.05 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/167.htm" id="num_158">
+                    <path d="m 72.660163,609.48582 -0.0724,-127.97893 82.207497,-0.0468 0.0571,73.74464 50.00024,0.0571 0,54.33816 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/177.htm" id="num_157">
+                    <path d="m 72.406141,480.44744 -0.08072,-25.74979 43.750419,0.0807 0.0807,-24.6197 38.66504,0 0,50.28877 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1098.htm" id="num_154">
+                    <path d="m 73.459253,453.54901 0,-23.5161 13.869929,0.11416 -0.114155,23.51609 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/163.htm" id="num_155">
+                    <path d="m 88.870286,453.54901 0,-23.97272 13.127914,0.17123 -0.11415,23.80149 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/300.htm" id="num_156">
+                    <path d="m 103.48223,453.60608 0.0571,-24.02979 11.24434,0.11415 -0.11416,23.91564 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/160.htm" id="num_160">
+                    <path d="m 156.03241,553.82222 0.16144,-124.55147 158.53474,0.64576 0.0807,123.82499 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/245.htm" id="num_244">
+                    <path d="m 320.94901,553.54948 0.0571,-40.63946 48.8016,0.11415 0.17124,-83.16249 15.06856,0 8.2763,0.5137 10.21694,0.97032 11.30143,1.54111 2.39727,0.34246 0.0571,120.26313 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/199.htm" id="num_243">
+                    <path d="m 321.00609,512.11093 0,-61.92952 20.37681,0 0.17124,-20.26265 27.112,0 0.0285,82.13509 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/200.htm" id="num_162">
+                    <path d="m 321.00609,449.06839 -0.0285,-19.29233 19.37795,0.1427 -0.0856,19.12109 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/202.htm" id="num_248">
+                    <path d="m 422.49059,553.64937 0.12073,-82.60585 45.62721,-0.0858 0.17123,0.37101 19.40649,0.19977 0.0571,-25.99898 9.08143,0.087 9.00032,0.16144 8.43527,0.16144 3.5517,-0.0404 0.2018,24.90223 65.34311,0 0,82.65762 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/255.htm" id="num_245">
+                    <path d="m 421.78394,469.79235 -0.1009,-35.75911 1.65476,0.82739 4.52034,1.43278 4.47998,1.10991 7.04285,1.45296 8.6169,1.53369 11.26048,1.87675 12.89508,1.95747 7.74326,0.86302 6.69238,0.31393 0.1142,24.95626 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/258.htm" id="num_249">
+                    <path d="m 519.1932,469.50983 -0.12108,-23.69142 4.72214,-0.36324 5.20646,-0.48432 3.63242,-0.48432 1.65476,-0.32288 0,25.30582 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1213.htm" id="num_358">
+                    <path d="m 535.53907,469.75199 -0.0404,-25.46726 3.47097,-0.56504 3.5517,-0.60541 3.71313,-0.64576 2.82522,-0.44396 1.73548,-0.32288 -0.0404,28.05031 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1214.htm" id="num_359">
+                    <path d="m 552.00602,469.79235 0.0404,-28.49427 4.7625,-0.72649 5.32754,-1.04936 4.23782,-0.80721 0,31.07733 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1209.htm" id="num_360">
+                    <path d="m 567.66576,469.75199 0,-31.35985 5.28718,-0.92828 6.57871,-1.37225 3.91494,-0.88792 0.0404,34.5483 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/259.htm" id="num_250">
+                    <path d="m 585.04082,553.47916 0.0362,-118.76586 6.0784,-1.0433 7.70879,-1.45296 6.13475,-1.13009 5.44862,-0.92828 0.0807,23.16674 22.72278,-0.0807 0.12108,35.35551 -0.12108,30.51229 -0.24217,34.30614 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1528.htm" id="num_365">
+                    <path d="m 611.73236,452.06498 -0.0285,-22.83116 10.07425,0.11416 -0.0571,22.63138 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2131.htm" id="num_366">
+                    <path d="m 622.86255,452.03644 0.0571,-22.77408 10.30256,0.14269 -0.11416,22.65993 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/306.htm" id="num_348">
+                    <path d="m 637.91685,553.53521 -0.11416,-65.45408 24.42695,0.0347 0.0404,-58.19936 107.53241,0.004 6e-5,123.61842 z" class="stroke" style="fill: rgb(252, 229, 184);"></path><circle cx="730.29578" cy="411.41739" r="7.5" class="stroke" style="fill: rgb(252, 229, 184);"></circle>
+                    <path d="m 725.24711,398.76289 -0.38527,-0.45662 -0.0285,-0.44236 0.28539,-0.38527 1.26998,-0.41382 0.79909,-0.22831 0.88471,-0.21404 2.59704,-0.0571 1.36987,0.11416 1.48403,0.31392 0.27112,0.35674 -0.0571,0.39955 -0.38528,0.39954 -1.62672,-0.0856 -1.01313,-0.11416 -1.15583,-0.0571 -1.3556,0.12843 -1.46975,0.371 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 740.2586,400.46096 -0.94179,-0.0428 -0.21404,0.15696 -0.0285,0.71348 0.75628,0.62785 0.91325,1.02741 0.88471,1.18436 0.61359,1.21291 0.52797,1.09875 0.34246,0.92751 0.29966,0.39955 0.29966,0.0713 0.34247,-0.0428 0.22831,-0.21405 0.12843,-0.48516 -0.31393,-1.14156 -0.57078,-1.31279 -0.59932,-0.91324 -0.77055,-1.19864 -0.9846,-1.1701 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 739.85905,421.7082 0.69921,-0.0143 0.5137,-0.371 1.09875,-1.38414 0.94178,-1.45549 0.74202,-1.51256 0.65639,-1.56964 0.11416,-0.94179 -0.29966,-0.41381 -0.49943,-0.0999 -0.42809,0.3282 -0.27112,0.71347 -0.35673,1.0274 -0.38528,0.9846 -0.61359,1.09875 -0.68493,1.07021 -0.75628,0.89897 -0.52797,0.67067 -0.12843,0.59932 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 728.41493,425.93197 -0.48516,-0.39955 -0.12842,-0.52797 0.25685,-0.55651 1.71233,0.0143 1.79796,0.0999 1.41268,-0.15697 1.29852,-0.35673 1.44122,-0.55651 0.57077,-0.25685 0.44236,0.41381 0.12842,0.6564 -0.25685,0.29966 -0.8419,0.38527 -1.66952,0.54224 -1.41268,0.27112 -1.65526,0.15697 -1.24145,0.0143 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 717.09924,415.70076 0.45662,0.15696 0.22832,0.52797 0.32819,0.6992 0.58505,0.97033 0.58505,0.92751 0.82763,1.04168 0.6992,0.74201 0.94179,0.95605 0.1855,0.17124 0.15697,0.3282 -0.0428,0.58504 -0.44235,0.18551 -0.42809,-0.12843 -0.59932,-0.5137 -0.78482,-0.75628 -0.71347,-0.81336 -0.82763,-0.99886 -0.67067,-0.9846 -0.57078,-1.04167 -0.42808,-0.88471 -0.11416,-0.65639 0.1427,-0.34247 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 716.8852,409.49353 -0.28539,0.28539 -0.44235,0.0856 -0.41382,-0.3282 -0.0571,-1.26998 0.25685,-0.98459 0.45663,-1.24145 0.64212,-1.44122 0.64213,-1.2129 0.78482,-1.05594 0.69921,-0.62786 0.77055,-0.0428 0.0999,0.54224 -0.0285,0.57078 -0.57077,0.64213 -0.51371,0.6992 -0.52797,0.79909 -0.52797,1.04167 -0.28539,0.91325 -0.32819,1.31279 -0.18551,0.48516 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 771.06531,428.80574 -0.0599,-43.32605 25.70919,0.0342 0.1316,11.16481 10.1211,0.0778 0.0571,32.13485 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6730.htm" id="num_347">
+                    <path d="m 637.77137,486.8647 0,-57.02891 23.72592,0.0188 0.006,57.01011 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2815.htm" id="num_375">
+                    <path d="m 771.32216,554.09172 -0.0571,-123.98746 37.24333,0.0713 0.0285,-33.27642 118.75056,0 0.18915,157.24591 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6636.htm" id="num_378">
+                    <path d="m 771.00823,349.83847 0,-8.16214 25.74213,0.11415 0.0571,8.10506 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2037.htm" id="num_377">
+                    <path d="m 771.04065,340.47838 -0.0404,-8.47564 25.74979,0.0807 0.0807,8.39492 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2161.htm" id="num_372">
+                    <path d="m 770.95993,330.95338 0.0807,-21.14873 25.70943,0.12108 -0.0807,20.90657 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2780.htm" id="num_333">
+                    <path d="m 770.95115,308.97069 -0.19302,-39.88945 26.02077,-0.008 0,39.89745 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/4127.htm" id="num_350">
+                    <path d="m 797.76917,395.99379 -0.0303,-126.87219 64.45519,-0.52468 0.0389,-19.87195 10.77345,-0.0428 0.0856,73.90161 54.22317,-0.10603 -0.0562,40.37449 -52.19774,0.0285 -0.0124,16.62589 52.22606,0 0,16.38623 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/4112.htm" id="num_3501">
+                    <path d="m 876.04583,377.97787 -0.0143,-13.89847 51.28449,0.0571 0,13.84139 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/5534.htm" id="num_390">
+                    <path d="m 770.67741,267.87043 -0.0404,-3.99565 10.21112,-14.93327 15.82119,0 0.0404,18.88856 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/298.htm" id="num_343">
+                    <path d="m 797.67836,267.87043 0.0404,-19.05 11.58337,0.12108 -0.0807,18.92892 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/288.htm" id="num_332">
+                    <path d="m 810.51289,267.87043 -0.0807,-19.00964 11.58337,0.12108 0,18.88856 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2781.htm" id="num_373">
+                    <path d="m 823.46851,267.70899 0,-18.8482 11.66409,0.12108 -0.12108,18.56568 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2782.htm" id="num_371">
+                    <path d="m 836.13411,267.67483 0,-18.80716 24.97158,0.0856 0.0571,18.6074 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/244.htm" id="num_330">
+                    <path d="m 874.71877,321.12828 0.0879,-52.65244 29.34184,0.0404 0.0404,-19.85721 23.12638,0 -0.0202,72.4465 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/287.htm" id="num_331">
+                    <path d="m 874.80439,267.56068 -0.0285,-18.92132 27.91109,0.0285 0,18.83571 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/299.htm" id="num_1271">
+                    <path d="m 252.00889,389.35454 0,-9.3232 19.89756,0.0807 0,9.28284 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/195.htm" id="num_127">
+                    <path d="m 251.44385,378.8609 -0.0404,-10.13041 20.4626,0.16144 0,10.00933 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/209.htm" id="num_134">
+                    <path d="m 273.23834,389.3949 0.0404,-16.78983 9.40392,0.0807 0.0404,16.58803 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/210.htm" id="num_133">
+                    <path d="m 273.19798,371.39426 0.0807,-16.5073 9.40392,0.0404 0.0404,16.42658 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/196.htm" id="num_126">
+                    <path d="m 252.00889,367.64077 0.0404,-9.1214 19.81684,0 0.0404,8.95996 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/194.htm" id="num_125">
+                    <path d="m 252.00889,356.90496 0,-8.91959 19.41324,0.0404 0.0807,6.49798 0.36324,0.2018 0.0807,2.30053 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/193.htm" id="num_124">
+                    <path d="m 252.04925,346.7342 0,-9.3232 19.4536,0.0404 0.0404,9.28284 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/187.htm" id="num_118">
+                    <path d="m 252.08961,275.61959 -0.0404,-9.08104 30.35085,0.12108 0.0404,16.18443 -9.68644,0.0404 -0.0404,-7.38592 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/188.htm" id="num_119">
+                    <path d="m 252.05599,285.91122 -0.0571,-9.24662 19.40648,0.11416 0.11416,9.07538 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6836.htm" id="num_120">
+                    <path d="m 252.11307,296.01401 -0.0571,-9.07539 19.40649,0.0571 0.0571,9.07539 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/190.htm" id="num_121">
+                    <path d="m 252.05599,305.37478 0,-8.10506 19.46357,0.0571 0.0571,8.04798 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1519.htm" id="num_129">
+                    <path d="m 272.80381,300.5517 -0.0571,-16.60967 9.70324,0 0.0285,16.55259 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/208.htm" id="num_130">
+                    <path d="m 272.83474,317.7556 -0.12108,-15.94227 9.7268,0.0404 -0.0404,15.94227 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/191.htm" id="num_122">
+                    <path d="m 252.12997,315.57615 -0.12108,-9.00032 19.4536,0 0.0404,9.08104 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/192.htm" id="num_123">
+                    <path d="m 252.04925,326.02944 0,-8.9196 19.41324,0 0.0807,8.95996 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6837.htm" id="num_1231">
+                    <path d="m 252.04925,336.28092 0,-9.04068 19.41324,0.12108 0.0404,8.87924 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1321.htm" id="num_131">
+                    <path d="m 272.83235,335.71169 -0.0856,-16.75237 9.76032,0.0571 -0.0285,16.60967 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6606.htm" id="num_132">
+                    <path d="m 272.77527,353.60561 -0.0285,-16.43844 9.6747,0 0,16.52405 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/7029.htm" id="num_144">
+                    <path d="m 309.80536,368.03422 -0.78027,-3.68997 -1.00422,-5.08793 -1.11302,-5.79341 -0.19977,-2.16896 35.27414,0.0285 0.21989,16.79254 -32.39675,-0.0808 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/7030.htm" id="num_145">
+                    <path d="m 310.24609,369.69763 31.97149,-0.061 0.29832,30.88068 -6.04715,-2.18299 -4.95313,-2.125 -3.85937,-1.82812 -3.67188,-1.92188 -3.65625,-1.92187 -3.79687,-2.01563 -1.5,-0.90625 -1.42939,-4.80908 -1.31478,-4.62934 -1.35897,-5.49112 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6304.htm" id="num_1432">
+                    <path d="m 306.73662,349.98116 -0.94179,-10.7021 -0.28539,-8.98977 36.21593,0.0285 0.17123,19.72041 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/LTB.htm" id="num_143">
+                    <path d="m 305.72827,329.41969 0.0404,-7.18411 0.28252,-4.43962 0.2018,-4.52034 0.44397,-3.43061 35.11334,0.0807 0.0404,19.4536 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6594.htm" id="num_142">
+                    <path d="m 306.85836,308.91672 0.0807,-2.09872 0.64576,-4.1571 0.76684,-4.80286 1.08973,-5.44862 1.13008,-5.12575 31.27913,0.0807 0,21.26981 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/186.htm" id="num_141">
+                    <path d="m 343.03816,308.97069 0,-22.83116 -32.07778,0 1.88357,-7.64843 1.8265,-6.62104 1.71233,-4.33792 10.27402,-4.33792 8.16214,-3.31052 8.21922,-3.02513 6.62104,-2.11188 6.73519,-1.94065 8.39045,-2.28311 8.56168,-1.76942 0.0571,60.21718 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/colins.htm" id="num_1401">
+                    <path d="m 374.65932,308.6853 0,-33.39057 11.47265,0.11416 0,-28.82434 10.15987,-0.5137 -0.28539,62.61445 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Levis.htm" id="num_1411">
+                    <path d="m 374.66344,274.12626 0,-25.74979 5.69078,-0.84756 4.5607,-0.56504 -0.0807,27.16239 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1154.htm" id="num_216">
+                    <path d="m 397.54765,308.67456 0.0807,-20.01864 39.14937,0.0807 -0.88793,5.3679 -0.88792,6.25583 -0.6054,5.20646 -0.0807,3.10773 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/219.htm" id="num_140">
+                    <path d="m 397.50729,287.08187 0.0403,-41.35349 10.49375,0.18612 7.22447,0.24216 4.47998,0.2018 2.70413,0.36325 0.0404,40.19872 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/267.htm" id="num_215">
+                    <path d="m 423.86046,286.96716 -0.17123,-19.12109 18.29347,0 -1.1701,3.76714 -1.08448,4.30938 -1.36987,6.02172 -0.59932,3.28198 -0.39954,1.65526 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Timberland.htm" id="num_214">
+                    <path d="m 423.57996,266.98251 0.0404,-19.81684 5.56971,0.32288 7.26483,1.17044 7.46663,1.45297 4.03601,1.04936 -1.09464,2.24404 -1.36987,3.05367 -1.54111,4.30938 -1.08448,3.45321 -0.71347,2.62558 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Reserved.htm" id="num_217">
+                    <path d="m 389.49957,369.07372 -0.0856,-19.54918 -46.34725,0.0571 0.0285,-39.38375 90.98217,0.0285 -0.48517,9.0183 0.0856,12.47152 0.74201,14.41217 1.3128,15.55373 0.65639,4.10961 0.77055,3.36759 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/BuonAquisto.htm" id="num_354">
+                    <path d="m 343.82827,401.40205 -0.26234,-16.52749 -0.0854,-33.32376 45.07727,0.0285 -0.0508,20.29925 -19.81685,-0.0807 0.0807,35.3555 -5.7269,-0.95048 -6.39272,-1.39841 -6.73519,-1.6838 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Berlin.htm" id="num_219">
+                    <path d="m 370.03601,407.41579 -0.17124,-34.20392 18.89279,-0.0285 0.0571,16.60966 -0.5137,0.85617 0.11416,18.49324 -7.47564,-0.2939 -6.09439,-0.8072 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/MOHITO.htm" id="num_221">
+                    <path d="m 390.0003,389.71778 0,-19.33252 47.50392,0.28252 1.29153,6.33655 1.77584,7.82987 1.37225,4.80286 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/MOZAIKA.htm" id="num_222">
+                    <path d="m 389.5967,409.29246 -0.0404,-18.40423 18.4446,0.0404 0,18.28315 -8.75816,0.28252 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/226.htm" id="num_223">
+                    <path d="m 409.29246,409.17138 -0.12108,-18.32351 18.96928,0.0404 0.36324,16.5073 -7.70879,1.04937 -6.69979,0.56504 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Arber.htm" id="num_224">
+                    <path d="m 429.63399,407.43589 -0.32288,-16.46694 12.79417,-0.36325 1.41261,3.99566 1.69512,5.7715 1.49333,4.43962 -6.33655,1.13009 -6.49798,0.84756 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/303.htm" id="num_353">
+                    <path d="m 491.18324,266.98251 -0.12108,-8.03167 23.69142,0.0404 0.0807,7.99131 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/250.htm" id="num_228">
+                    <path d="m 467.55359,307.52948 -1.41267,-0.49944 -0.88471,-0.48516 -0.79909,-0.67066 -0.59932,-1.01314 -0.41382,-0.89897 0.007,-33.71164 0.55651,-1.07734 0.6992,-0.78482 0.93465,-0.50657 1.13443,-0.3282 73.25234,0.007 1.47689,0.58505 0.93465,0.66353 0.64213,0.74201 0.44235,0.84903 0.20691,0.78482 -0.0856,33.79012 -0.4709,0.75628 -0.70374,0.7535 -0.72144,0.52469 -0.73153,0.23711 -0.83747,0.2018 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1855.htm" id="num_22">
+                    <path d="m 473.08171,331.51842 -1.06954,0.67603 -1.38234,0.46414 -3.0371,0.0505 -1.68504,-0.39351 -1.14017,-0.63567 -1.16036,-0.99892 -0.74666,-1.03927 -0.83748,-1.39243 -0.34306,-1.03927 -0.0505,-2.5326 0.29261,-1.31171 0.60541,-1.24107 0.57513,-0.90811 0.74666,-0.78702 0.84756,-0.65585 0.87784,-0.6054 0.85765,-0.40361 0.7164,-0.24216 1.19062,-0.15135 0.97873,0.0101 1.49333,0.14126 1.23099,0.48433 0.94846,0.66594 0.77693,0.65585 0.60541,0.6054 0.65585,0.36325 0.9081,0.49441 0.37333,0.44396 0.85766,0.7063 2.56287,1.4227 1.50341,0.55495 1.06955,0.18162 2.56287,-0.0605 1.60432,-0.28252 1.92719,-0.87783 0.94847,-0.43388 1.94738,-1.3117 2.82521,-2.13909 2.36107,-1.77585 1.25116,-1.009 1.5236,-0.75675 1.44287,-0.68613 1.51351,-0.26234 2.08864,-0.0404 1.94738,0.47423 1.67494,0.70631 1.16036,0.74666 1.14017,1.09981 0.78703,0.57514 1.11999,0.85765 1.89197,1.08917 1.60531,0.71347 2.25458,0.58505 1.18437,0.15696 2.25457,-0.0285 2.7112,-0.31393 2.06908,-0.69921 1.75514,-1.01313 1.75515,-0.92752 0.8926,-0.67224 0.72648,-0.67603 1.51351,-0.82738 2.70413,-1.30162 2.17945,-0.52468 3.04719,0.0202 2.58305,0.84756 1.96756,1.08973 2.01801,1.81621 1.57405,1.58413 1.19062,1.56396 0.8072,1.41261 0.33297,1.90701 -0.0101,2.28035 -0.32229,2.39636 -0.37815,1.4983 -0.49229,1.44121 -0.66353,1.12729 -0.78482,1.05594 -0.86331,0.89898 -1.23431,0.91325 -1.19863,0.6992 -1.04881,0.52797 -0.52797,0.0214 -0.32106,-0.19264 -0.21404,-1.07021 -0.3457,-1.19457 -0.75675,-1.48324 -0.73658,-1.22089 -1.18053,-1.48324 -0.83747,-0.93837 -0.9182,-0.7164 -1.18053,-0.77693 -1.34198,-0.64576 -1.38233,-0.4137 -1.0191,-0.2018 -1.01909,-0.2018 -1.80612,-0.0101 -0.92828,0.22198 -1.54378,0.32289 -1.12,0.26234 -0.95855,0.58522 -1.47533,0.77389 -1.29852,0.4923 -0.99887,0.39241 -0.62785,0.13556 -2.28312,0 -0.97746,-0.24972 -1.08448,-0.44235 -1.14261,-0.6884 -1.24039,-1.1809 -1.0274,-1.3342 -0.44949,-0.59932 -0.23545,-0.81336 -0.24971,1.32706 -0.50657,1.64813 -0.50657,1.29139 -0.85616,1.1915 -1.13443,1.31992 -0.74587,0.56021 -1.04936,0.70631 -1.59423,0.65585 -0.96865,0.27243 -0.93837,0.15135 -2.14918,0.0404 -0.95855,-0.0706 -1.14018,-0.32288 -0.99891,-0.34306 -1.19334,-0.60827 -0.77055,-0.55651 -1.12016,-1.03453 -0.56364,-0.64926 -0.69207,-0.81336 c 0,0 -0.33533,-0.47803 -0.39241,-0.6778 -0.0571,-0.19978 -0.21404,-0.72061 -0.21404,-0.72061 l 0.42095,-0.47089 0.27112,-0.6564 -0.12129,-0.90611 -0.49943,-0.60645 -0.99887,-0.50657 -0.97746,0.0428 -0.70634,0.50656 -0.33533,0.8205 0.12129,0.87757 0.57078,0.89898 0.47089,0.36387 0.71348,0.11416 -0.0713,0.26398 -1.18437,1.3342 -1.19863,1.25571 -1.31279,1.01313 -1.69807,1.09162 -2.01913,1.26998 -1.39841,0.60645 -1.42695,0.29253 -1.56964,-0.0357 -1.27712,-0.32106 -0.92751,-0.30679 -0.94892,-0.39241 -1.14156,-0.74202 -0.92038,-0.62785 -0.77055,-0.71348 -0.90612,-0.80622 -0.65639,-0.56365 -0.45683,-0.44261 -0.11099,-0.36324 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/251.htm" id="num_230">
+                    <path d="m 466.79561,387.8713 -1.57404,-0.5045 -1.20072,-0.83747 -0.92828,-1.06955 -0.88793,-1.83639 0.0693,-33.81346 0.49943,-0.94179 0.77055,-0.92751 0.87044,-0.67067 1.04167,-0.44235 0.6992,-0.11416 73.10252,-0.0143 0.89898,0.0999 0.97032,0.42808 0.9846,0.67067 0.6992,0.72774 0.61359,1.07021 0.28539,0.9846 0.15696,0.65639 -0.15696,33.49046 -0.5137,1.18436 -0.48517,0.61359 -0.57077,0.37101 -0.75629,0.39954 -0.59931,0.27112 -2.18323,0.22831 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/247.htm" id="num_234">
+                    <path d="m 565.24415,273.8841 -0.76684,-3.26917 -1.33189,-4.5607 -1.73549,-4.92394 -1.4126,-3.79386 -1.41261,-3.30953 -0.8072,-1.65477 2.30053,-0.6054 5.7715,-1.29153 11.54301,-1.85657 11.66409,-1.25116 9.1214,-0.44396 8.95996,-0.0404 8.39491,0.48432 11.17977,1.45297 8.63707,1.69512 0,23.28782 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/252.htm" id="num_321">
+                    <path d="m 636.64129,273.8841 0,-23.48962 12.83453,3.14809 -0.0404,20.38189 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/293.htm" id="num_338">
+                    <path d="m 650.44447,263.9555 0.0404,-10.25148 5.28718,1.6144 5.08538,1.69513 0.0404,6.98231 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/294.htm" id="num_339">
+                    <path d="m 650.4041,273.64194 0.0404,-8.516 10.45328,0.12108 0,8.43528 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/PullBear.htm" id="num_235">
+                    <path d="m 571.54952,309.48439 -0.77055,-6.79227 -0.99887,-7.84821 -1.36986,-8.84707 -1.11302,-5.53656 -0.74202,-3.05366 -0.82763,-2.42581 95.34863,0.0285 -0.0571,34.8746 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Bershka.htm" id="num_238">
+                    <path d="m 571.76232,348.28807 0.18162,-4.17728 0.26234,-5.73114 0.16144,-4.4598 -0.12108,-6.27601 -0.16144,-6.86123 -0.22198,-5.32754 -0.26234,-4.37908 89.30409,0.0637 0,37.15771 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/265.htm" id="num_237">
+                    <path d="m 569.39116,366.83357 0.34306,-2.54269 0.46414,-2.56288 0.4036,-3.34989 0.33298,-2.60323 0.37333,-3.74341 0.13117,-2.26017 22.22776,0.0101 0.0571,17.06629 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/GloriaJeans.htm" id="num_242">
+                    <path d="m 566.34116,381.01013 1.01313,-3.77427 0.74202,-3.45321 0.77055,-3.65299 0.25685,-2.36873 25.65651,0.0285 0.0856,-18.06516 66.03913,0.0285 0,14.38363 -24.60058,0.0571 0.0856,16.92359 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Voronin.htm" id="num_352">
+                    <path d="m 558.96815,405.75086 1.18053,-3.53152 1.28144,-3.66268 1.18671,-4.0262 1.19863,-3.99545 1.42695,-4.9087 1.0274,-3.59591 15.41104,0.11416 0.0101,27.047 -7.05919,-0.64848 -5.30825,-0.82763 -4.2523,-0.68493 -3.53883,-0.62786 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1349.htm" id="num_355">
+                    <path d="m 582.05185,409.27083 -0.0143,-26.9265 12.22894,0.11416 0.0285,27.59716 -6.4498,-0.34247 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1216.htm" id="num_357">
+                    <path d="m 594.90887,409.77678 -0.0716,-27.31829 13.78431,0.0856 0.0571,27.2547 -3.8813,0.19977 -6.62103,0 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1527.htm" id="num_363">
+                    <path d="m 609.10678,410.08419 -0.0285,-27.86829 13.89846,0.0143 -0.0428,27.51155 -5.28207,0.33777 -4.33872,0.14126 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/1367.htm" id="num_364">
+                    <path d="m 623.41906,409.72745 -0.0285,-27.46874 12.8568,0 0.0285,26.28437 -4.0668,0.55651 -3.42467,0.37101 -3.48175,0.21404 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/AVVA.htm" id="num_328">
+                    <path d="m 637.63011,408.30364 -0.07,-43.03987 23.41836,0.11683 0.0404,17.03199 -10.04968,0.0807 0.0404,22.8035 -4.31854,1.04936 -4.84322,1.04936 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/296.htm" id="num_340">
+                    <path d="m 651.97228,404.7046 -0.0285,-21.27579 9.21808,-0.0428 0.0571,18.6502 -3.75288,1.1701 -3.03939,0.87044 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/346.htm" id="num_3221">
+                    <path d="m 662.44607,281.03106 -0.0285,-23.77294 0.85617,0.22831 4.70893,1.74088 4.30938,1.76941 0.0285,20.09142 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/5582.htm" id="num_322">
+                    <path d="m 673.26233,281.25937 -0.0285,-19.77749 2.56851,1.05594 4.79454,2.05481 4.2523,1.88357 3.53883,1.65526 1.22718,0.68493 0.65639,1.88357 0.88471,3.19637 1.1701,3.88129 0.97032,3.39614 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2158.htm" id="num_356">
+                    <path d="m 662.18927,291.27933 0.0404,-9.00032 30.95625,0 0.56505,1.37225 0.8072,2.30053 0.52468,2.46197 0.32288,1.65477 0.0404,1.2108 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6585.htm" id="num_323">
+                    <path d="m 662.31035,308.75528 -0.0355,-16.56549 33.4191,0 0.68494,1.82649 0.62786,2.45435 0.57078,2.62559 0.25685,2.1975 0.48516,2.91097 0.17123,2.11188 0.22831,2.36873 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2033.htm" id="num_324">
+                    <path d="m 662.38899,321.58491 0,-11.70097 36.30154,0 0.51371,2.62558 0.45662,2.73974 0.17123,1.59818 0.11416,4.79455 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/295.htm" id="num_341">
+                    <path d="m 662.2463,336.02562 -0.0571,-13.52747 38.0995,0.0285 -0.1427,8.59023 -0.22831,4.82308 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Vaismann.htm" id="num_325">
+                    <path d="m 662.29017,348.83293 -0.1009,-11.72463 37.77712,0 -0.24216,6.41727 -0.44396,5.18628 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/ROLADA.htm" id="num_342">
+                    <path d="m 662.36045,357.57252 -0.11415,-7.73405 36.50131,0.0856 -0.22831,2.88244 -0.39954,2.76828 -0.34247,2.0548 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/Stress.htm" id="num_326">
+                    <path d="m 662.35071,374.34056 -0.0404,-15.70011 35.23443,0.0807 -0.16144,2.34089 -0.4036,2.82521 -0.6054,3.18846 -0.36325,2.26017 -0.48432,2.21981 -0.36324,1.2108 -0.44396,1.17045 -0.24216,0.4036 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/351.htm" id="num_327">
+                    <path d="m 662.30338,401.96486 -0.0143,-26.38426 32.17766,0.0143 -1.04167,4.23803 -1.42695,4.66612 -1.51256,4.23803 -1.64099,1.26999 -2.24031,1.26998 -2.93951,1.69807 -2.91097,1.42695 -6.79227,3.06793 -5.3796,2.24031 -3.66725,1.42695 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/291.htm" id="num_335">
+                    <path d="m 716.04992,335.31227 0.0605,-5.93294 -0.0404,-9.28284 -0.28252,-5.28718 -0.4036,-4.92394 -0.48433,-5.12574 -0.45507,-4.43095 -0.65819,-4.49345 -0.76757,-4.8372 -1.01757,-5.63407 -0.86132,-4.2747 -1.06444,-4.50908 -1.14257,-4.44657 -1.11131,-4.13408 47.32039,0.0329 -0.003,67.34039 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/290.htm" id="num_374">
+                    <path d="m 713.98741,354.37616 0.79909,-5.36532 0.37101,-3.79568 0.34247,-4.08107 0.14269,-3.39614 39.46937,0.0285 0,16.72383 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2160.htm" id="num_336">
+                    <path d="m 710.43431,371.24268 0.89898,-3.26771 1.22717,-4.95151 0.61359,-3.25344 0.55651,-3.0394 41.36782,-0.10818 0.0404,14.77182 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/2162.htm" id="num_370">
+                    <path d="m 727.22968,387.88139 -0.0404,-8.73797 17.71812,0.0605 0.0202,8.61689 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/304.htm" id="num_23">
+                    <circle cx="502.80707" cy="233.27747" r="13.25" class="stroke" style="fill: rgb(252, 229, 184);"></circle>
+                  </a>
 
-      </div>
-      <div class="col-sm-9">
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/340.htm" id="num_63">
+                    <circle cx="275.85474" cy="244.91249" r="7.5" class="stroke" style="fill: rgb(252, 229, 184);"></circle>
+                    <path d="m 270.80608,232.258 -0.38527,-0.45662 -0.0285,-0.44236 0.28539,-0.38527 1.26998,-0.41382 0.79909,-0.22831 0.88471,-0.21404 2.59704,-0.0571 1.36987,0.11416 1.48403,0.31392 0.27112,0.35674 -0.0571,0.39955 -0.38528,0.39954 -1.62672,-0.0856 -1.01313,-0.11416 -1.15583,-0.0571 -1.3556,0.12843 -1.46975,0.371 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 285.81757,233.95607 -0.94179,-0.0428 -0.21404,0.15696 -0.0285,0.71348 0.75628,0.62785 0.91325,1.02741 0.88471,1.18436 0.61359,1.21291 0.52797,1.09875 0.34246,0.92751 0.29966,0.39955 0.29966,0.0713 0.34247,-0.0428 0.22831,-0.21405 0.12843,-0.48516 -0.31393,-1.14156 -0.57078,-1.31279 -0.59932,-0.91324 -0.77055,-1.19864 -0.9846,-1.1701 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 285.41802,255.20331 0.69921,-0.0143 0.5137,-0.371 1.09875,-1.38414 0.94178,-1.45549 0.74202,-1.51256 0.65639,-1.56964 0.11416,-0.94179 -0.29966,-0.41381 -0.49943,-0.0999 -0.42809,0.3282 -0.27112,0.71347 -0.35673,1.0274 -0.38528,0.9846 -0.61359,1.09875 -0.68493,1.07021 -0.75628,0.89897 -0.52797,0.67067 -0.12843,0.59932 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 273.9739,259.42708 -0.48516,-0.39955 -0.12842,-0.52797 0.25685,-0.55651 1.71233,0.0143 1.79796,0.0999 1.41268,-0.15697 1.29852,-0.35673 1.44122,-0.55651 0.57077,-0.25685 0.44236,0.41381 0.12842,0.6564 -0.25685,0.29966 -0.8419,0.38527 -1.66952,0.54224 -1.41268,0.27112 -1.65526,0.15697 -1.24145,0.0143 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 262.65821,249.19587 0.45662,0.15696 0.22832,0.52797 0.32819,0.6992 0.58505,0.97033 0.58505,0.92751 0.82763,1.04168 0.6992,0.74201 0.94179,0.95605 0.1855,0.17124 0.15697,0.3282 -0.0428,0.58504 -0.44235,0.18551 -0.42809,-0.12843 -0.59932,-0.5137 -0.78482,-0.75628 -0.71347,-0.81336 -0.82763,-0.99886 -0.67067,-0.9846 -0.57078,-1.04167 -0.42808,-0.88471 -0.11416,-0.65639 0.1427,-0.34247 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 262.44417,242.98864 -0.28539,0.28539 -0.44235,0.0856 -0.41382,-0.3282 -0.0571,-1.26998 0.25685,-0.98459 0.45663,-1.24145 0.64212,-1.44122 0.64213,-1.2129 0.78482,-1.05594 0.69921,-0.62786 0.77055,-0.0428 0.0999,0.54224 -0.0285,0.57078 -0.57077,0.64213 -0.51371,0.6992 -0.52797,0.79909 -0.52797,1.04167 -0.28539,0.91325 -0.32819,1.31279 -0.18551,0.48516 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
 
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/341.htm" id="num_69">
+                    <circle cx="730.81085" cy="244.9359" r="7.5" class="stroke" style="fill: rgb(252, 229, 184);"></circle>
+                    <path d="m 725.78237,231.97871 -0.38527,-0.45662 -0.0285,-0.44236 0.28539,-0.38527 1.26998,-0.41382 0.79909,-0.22831 0.88471,-0.21404 2.59704,-0.0571 1.36987,0.11416 1.48403,0.31392 0.27112,0.35674 -0.0571,0.39955 -0.38528,0.39954 -1.62672,-0.0856 -1.01313,-0.11416 -1.15583,-0.0571 -1.3556,0.12843 -1.46975,0.371 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 740.8544,233.69696 -0.94179,-0.0428 -0.21404,0.15696 -0.0285,0.71348 0.75628,0.62785 0.91325,1.02741 0.88471,1.18436 0.61359,1.21291 0.52797,1.09875 0.34246,0.92751 0.29966,0.39955 0.29966,0.0713 0.34247,-0.0428 0.22831,-0.21405 0.12843,-0.48516 -0.31393,-1.14156 -0.57078,-1.31279 -0.59932,-0.91324 -0.77055,-1.19864 -0.9846,-1.1701 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 740.38595,255.01065 0.69921,-0.0143 0.5137,-0.371 1.09875,-1.38414 0.94178,-1.45549 0.74202,-1.51256 0.65639,-1.56964 0.11416,-0.94179 -0.29966,-0.41381 -0.49943,-0.0999 -0.42809,0.3282 -0.27112,0.71347 -0.35673,1.0274 -0.38528,0.9846 -0.61359,1.09875 -0.68493,1.07021 -0.75628,0.89897 -0.52797,0.67067 -0.12843,0.59932 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 728.97037,259.22015 -0.48516,-0.39955 -0.12842,-0.52797 0.25685,-0.55651 1.71233,0.0143 1.79796,0.0999 1.41268,-0.15697 1.29852,-0.35673 1.44122,-0.55651 0.57077,-0.25685 0.44236,0.41381 0.12842,0.6564 -0.25685,0.29966 -0.8419,0.38527 -1.66952,0.54224 -1.41268,0.27112 -1.65526,0.15697 -1.24145,0.0143 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 717.66477,248.97712 0.45662,0.15696 0.22832,0.52797 0.32819,0.6992 0.58505,0.97033 0.58505,0.92751 0.82763,1.04168 0.6992,0.74201 0.94179,0.95605 0.1855,0.17124 0.15697,0.3282 -0.0428,0.58504 -0.44235,0.18551 -0.42809,-0.12843 -0.59932,-0.5137 -0.78482,-0.75628 -0.71347,-0.81336 -0.82763,-0.99886 -0.67067,-0.9846 -0.57078,-1.04167 -0.42808,-0.88471 -0.11416,-0.65639 0.1427,-0.34247 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 717.44064,242.81025 -0.28539,0.28539 -0.44235,0.0856 -0.41382,-0.3282 -0.0571,-1.26998 0.25685,-0.98459 0.45663,-1.24145 0.64212,-1.44122 0.64213,-1.2129 0.78482,-1.05594 0.69921,-0.62786 0.77055,-0.0428 0.0999,0.54224 -0.0285,0.57078 -0.57077,0.64213 -0.51371,0.6992 -0.52797,0.79909 -0.52797,1.04167 -0.28539,0.91325 -0.32819,1.31279 -0.18551,0.48516 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6523.htm" id="num_62">
+                    <circle cx="275.84027" cy="411.49811" r="7.5" class="stroke" style="fill: rgb(252, 229, 184);"></circle>
+                    <path d="m 271.15486,399.04541 -0.38527,-0.45662 -0.0285,-0.44236 0.28539,-0.38527 1.26998,-0.41382 0.79909,-0.22831 0.88471,-0.21404 2.59704,-0.0571 1.36987,0.11416 1.48403,0.31392 0.27112,0.35674 -0.0571,0.39955 -0.38528,0.39954 -1.62672,-0.0856 -1.01313,-0.11416 -1.15583,-0.0571 -1.3556,0.12843 -1.46975,0.371 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 286.16635,400.74348 -0.94179,-0.0428 -0.21404,0.15696 -0.0285,0.71348 0.75628,0.62785 0.91325,1.02741 0.88471,1.18436 0.61359,1.21291 0.52797,1.09875 0.34246,0.92751 0.29966,0.39955 0.29966,0.0713 0.34247,-0.0428 0.22831,-0.21405 0.12843,-0.48516 -0.31393,-1.14156 -0.57078,-1.31279 -0.59932,-0.91324 -0.77055,-1.19864 -0.9846,-1.1701 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 285.7668,421.99072 0.69921,-0.0143 0.5137,-0.371 1.09875,-1.38414 0.94178,-1.45549 0.74202,-1.51256 0.65639,-1.56964 0.11416,-0.94179 -0.29966,-0.41381 -0.49943,-0.0999 -0.42809,0.3282 -0.27112,0.71347 -0.35673,1.0274 -0.38528,0.9846 -0.61359,1.09875 -0.68493,1.07021 -0.75628,0.89897 -0.52797,0.67067 -0.12843,0.59932 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 274.32268,426.21449 -0.48516,-0.39955 -0.12842,-0.52797 0.25685,-0.55651 1.71233,0.0143 1.79796,0.0999 1.41268,-0.15697 1.29852,-0.35673 1.44122,-0.55651 0.57077,-0.25685 0.44236,0.41381 0.12842,0.6564 -0.25685,0.29966 -0.8419,0.38527 -1.66952,0.54224 -1.41268,0.27112 -1.65526,0.15697 -1.24145,0.0143 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 263.00699,415.98328 0.45662,0.15696 0.22832,0.52797 0.32819,0.6992 0.58505,0.97033 0.58505,0.92751 0.82763,1.04168 0.6992,0.74201 0.94179,0.95605 0.1855,0.17124 0.15697,0.3282 -0.0428,0.58504 -0.44235,0.18551 -0.42809,-0.12843 -0.59932,-0.5137 -0.78482,-0.75628 -0.71347,-0.81336 -0.82763,-0.99886 -0.67067,-0.9846 -0.57078,-1.04167 -0.42808,-0.88471 -0.11416,-0.65639 0.1427,-0.34247 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                    <path d="m 262.79295,409.77605 -0.28539,0.28539 -0.44235,0.0856 -0.41382,-0.3282 -0.0571,-1.26998 0.25685,-0.98459 0.45663,-1.24145 0.64212,-1.44122 0.64213,-1.2129 0.78482,-1.05594 0.69921,-0.62786 0.77055,-0.0428 0.0999,0.54224 -0.0285,0.57078 -0.57077,0.64213 -0.51371,0.6992 -0.52797,0.79909 -0.52797,1.04167 -0.28539,0.91325 -0.32819,1.31279 -0.18551,0.48516 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/216.htm" id="num_345">
+                    <path d="m 770.76955,361.86361 0.0206,-10.94158 26.21046,0.0247 0.0206,10.90707 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                  <a xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/mshops/6819.htm" id="num_346">
+                    <path d="m 770.91956,362.95899 25.95159,0.0404 -0.0404,21.26981 -25.99195,0 z" class="stroke" style="fill: rgb(252, 229, 184);"></path>
+                  </a>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
